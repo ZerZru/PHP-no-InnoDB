@@ -16,10 +16,10 @@
         exit ("Insert all areas!");
     }
     $login = stripslashes($login);
-    $login = htmlspecialchars($login);
+    $login = htmlspecialchars($login); #delete html-codes
     $password = stripslashes($password);
-    $password = htmlspecialchars($password);
-    $login = trim($login);
+    $password = htmlspecialchars($password); #delete html-codes
+    $login = trim($login); #delete space
     include ("db.php");
  
     $result = mysql_query("SELECT * FROM users WHERE login='$login'",$db);
